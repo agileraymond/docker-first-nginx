@@ -4,5 +4,9 @@ jobs:
   include:
     - stage: build docker image
       script:
-      - docker build -t agileraymond-demo .
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - docker build -t first-nginx .
       - docker images
+      - docker tag first-nginx $DOCKER_USERNAME/first-nginx
+      - docker push $DOCKER_USERNAME/first-nginx
+    
