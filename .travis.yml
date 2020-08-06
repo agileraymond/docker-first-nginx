@@ -1,7 +1,7 @@
 dist: trusty
 
-#env:
-#  - DOCKER_USERNAME=agileraymond
+env:
+  - DOCKER_USERNAME=agileraymond
 
 jobs:
   include:
