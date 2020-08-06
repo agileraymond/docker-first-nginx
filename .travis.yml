@@ -1,10 +1,14 @@
 dist: trusty
 
+env:
+  - DOCKER_USERNAME=agileraymond
+
 jobs:
   include:
     - stage: build docker image
       script:
-      - docker login -u agileraymond -p RaY246082!
+      - set 
+      - docker login -u $DOCKER_USERNAME -p RaY246082!
       - docker build -t first-nginx .
       - docker images
       - docker tag first-nginx $DOCKER_USERNAME/first-nginx
